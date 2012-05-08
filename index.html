@@ -1,0 +1,126 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Omniauth-twitter</title>
+  <meta name="description" content="OmniAuth strategy for Twitter">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Omniauth-twitter</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">OmniAuth strategy for Twitter</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/arunagw/omniauth-twitter/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/arunagw/omniauth-twitter/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/arunagw/omniauth-twitter" class="code">View Omniauth-twitter on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>OmniAuth Twitter</h1>
+
+<p>This gem contains the Twitter strategy for OmniAuth.</p>
+
+<p>Twitter uses the OAuth 1.0a flow, you can read about it here: <a href="https://dev.twitter.com/docs/auth/oauth">https://dev.twitter.com/docs/auth/oauth</a></p>
+
+<h2>How To Use It</h2>
+
+<p>Usage is as per any other OmniAuth 1.0 strategy. So let's say you're using Rails, you need to add the strategy to your <code>Gemfile</code>:</p>
+
+<pre><code>gem 'omniauth-twitter'
+</code></pre>
+
+<p>You can pull them in directly from github e.g.:</p>
+
+<pre><code>gem 'omniauth-twitter', :git =&gt; 'https://github.com/arunagw/omniauth-twitter.git'
+</code></pre>
+
+<p>Once these are in, you need to add the following to your <code>config/initializers/omniauth.rb</code>:</p>
+
+<pre><code>Rails.application.config.middleware.use OmniAuth::Builder do
+  provider :twitter, "consumer_key", "consumer_secret" 
+end
+</code></pre>
+
+<p>You will obviously have to put in your key and secret, which you get when you register your app with Twitter (they call them API Key and Secret Key). </p>
+
+<p>Twitter also optionally supports specifying a username when authenticating. This is handy when your application supports multiple twitter accounts since you can prompt the user to login to the correct account (and not defaulting to the current login). </p>
+
+<p>To use this, just add a querystring for screen_name. </p>
+
+<pre><code>/auth/twitter?screen_name=scottw
+</code></pre>
+
+<p>Twitter also optionally supports specifying a x_auth_access_type when authenticating. This is handy when you need to specify special permission in some cases.</p>
+
+<p>To use this, just add a querystring for x_auth_access_type. </p>
+
+<pre><code>/auth/twitter?x_auth_access_type=read   
+</code></pre>
+
+<p>Now just follow the README at: <a href="https://github.com/intridea/omniauth">https://github.com/intridea/omniauth</a></p>
+
+<h2>Supported Rubies</h2>
+
+<p>OmniAuth Twitter is tested under 1.8.7, 1.9.2, 1.9.3 and Ruby Enterprise Edition.</p>
+
+<p><a href="http://travis-ci.org/arunagw/omniauth-twitter"><img src="https://secure.travis-ci.org/arunagw/omniauth-twitter.png" alt="CI Build
+Status"></a></p>
+
+<h2>Note on Patches/Pull Requests</h2>
+
+<ul>
+<li>Fork the project.</li>
+<li>Make your feature addition or bug fix.</li>
+<li>Add tests for it. This is important so I don’t break it in a future version unintentionally.</li>
+<li>Commit, do not mess with rakefile, version, or history. (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)</li>
+<li>Send me a pull request. Bonus points for topic branches.</li>
+</ul><h2>License</h2>
+
+<p>Copyright (c) 2011 by Arun Agrawal</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/arunagw" class="avatar"><img src="https://secure.gravatar.com/avatar/ee85853909657f47c8a68e8a9bc7d992?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" width="48" height="48"/></a> <a href="https://github.com/arunagw">arunagw</a> maintains <a href="https://github.com/arunagw/omniauth-twitter">Omniauth-twitter</a></p>
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="http://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/arunagw/omniauth-twitter/tarball/master" class="tar">tar</a><a href="https://github.com/arunagw/omniauth-twitter/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
